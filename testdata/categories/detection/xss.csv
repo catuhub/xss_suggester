@@ -1,0 +1,44 @@
+ID;CURRENTSTATE;NEXT_STATE;IS_END_STATE;SUCCESS;REWARD;ACTION_BASEPAYLOAD;ACTION_DOUBLEQUOTEENCODING;ACTION_PREPEND;ACTION_SINGLEQUOTEENCODING;ACTION_APPEND;ACTION_SEMICOLON;ACTTAG;ACTION_CHARSET;ACTION_PARENTHESISENCODING;ACTION_SPACEENCODING;OBSERVATION_PAYLOAD;OBSERVATION_REQUESTVALIDITY;OBSERVATION_REFLECTION;OBSERVATION_REFLECTION_LOCATION;OBSERVATION_DOUBLEQUOTE;OBSERVATION_TAGBRACKET;OBSERVATION_SCRIPTSTRING;OBSERVATION_IMG_WORD;OBSERVATION_SINGLEQUOTE;OBSERVATION_ISCHARSETINPUT
+0;CheckReflectionString;CheckUrlString;0;0;143.303;GenericStringPayload;;;;;;;;;;NoErrors;ReqNotValidUrl;;;;;;;;
+1;CheckUrlString;TestHrefXSS;0;0;0.5;BaseHTTPGoogleRequest;;;;;;;;;;NoErrors;ReqValid;PerfectReflection;StringIsReflectedInHREF ;;;;;;
+2;TestHrefXSS;TestHrefXSS;0;0;0.0;JavascriptBasePayload;;;;;;;;;;NoErrors;ReqValid;EncodedReflection;StringIsReflectedInHREF ;DoubleQuoteEncoded;;;;;
+3;TestHrefXSS;XSSVulnerable;1;1;1.0;JavascriptBasePayload;EncodeDoubleQuoteLineFeed;;;;;;;;;NoErrors;ReqValid;PerfectReflection;StringIsReflectedInHREF ;DoubleQuoteNotEncoded;;;;;
+4;CheckReflectionString;TestXSSInHTML;0;0;143.303;GenericStringPayload;;;;;;;;;;NoErrors;ReqValid;PerfectReflection;StringIsReflectedInHTML ;;;;;;
+5;TestXSSInHTML;XSSVulnerable;1;1;8.857;ScriptBasePayload;;;;;;;;;;NoErrors;ReqValid;PerfectReflection;StringIsReflectedInHTML ;;TagBracketIsNotEncoded ;;;;
+6;TestXSSInHTML;TestImgInHTML;0;0;8.857;ScriptBasePayload;;;;;;;;;;NoErrors;ReqValid;FilteredReflection;StringIsReflectedInHTML ;;TagBracketIsNotEncoded ;ScriptWordFiltered;;;
+7;TestImgInHTML;XSSVulnerable;1;1;2.0;ImgStringPayload;;;;;;;;;;NoErrors;ReqValid;PerfectReflection;StringIsReflectedInHTML ;;TagBracketIsNotEncoded ;;ImgWordNotFiltered;;
+8;CheckReflectionString;TestImgSrcXSS;0;0;143.303;GenericStringPayload;;;;;;;;;;NoErrors;ReqValid;PerfectReflection;StringReflectedInImgSrc;;;;;;
+9;TestImgSrcXSS;TestImgSrcXSS;0;0;0.0;OnErrorPayload;DoubleQuoteClean;PrependDoubleQuote;;;;;;;;NoErrors;ReqValid;EncodedReflection;StringReflectedInImgSrc;DoubleQuoteEncoded;;;;;
+10;TestImgSrcXSS;TestImgSrcXSS;0;0;0.0;OnErrorPayload;EscapeDoubleQuote;PrependDoubleQuote;;;;;;;;NoErrors;ReqValid;EncodedReflection;StringReflectedInImgSrc;DoubleQuoteEncoded;;;;;
+11;TestImgSrcXSS;TestImgSrcXSS;0;0;0.0;OnErrorPayload;;PrependSingleQuote;QuoteClean;;;;;;;ExtensionFileProblem;ReqValid;PerfectReflection;StringReflectedInImgSrc;;;;;SingleQuoteNotEscaped;
+12;TestImgSrcXSS;XSSVulnerable;1;1;2.0;OnErrorPayload;;PrependSingleQuote;QuoteClean;AppendLineFeed;;;;;;NoErrors;ReqValid;PerfectReflection;StringReflectedInImgSrc;;;;;SingleQuoteNotEscaped;
+13;CheckReflectionString;TestXSSInFunctionBetweenQuotes;0;0;143.303;GenericStringPayload;;;;;;;;;;;ReqValid;PerfectReflection;StringReflectedInFunctionBetweenQuotes;;;;;;
+14;TestXSSInFunctionBetweenQuotes;TestXSSInFunctionBetweenQuotes;0;0;0.0;GenericStringPayload;;PrependJSFix;;;;;;;;InsideFunction;ReqValid;EncodedReflection;StringReflectedInFunctionBetweenQuotes;;;;;SingleQuoteHtmlEncode;
+15;TestXSSInFunctionBetweenQuotes;TestXSSCode;0;0;1.0;GenericStringPayload;;PrependJSFix;;;SemicolonUrlEncoding;;;;;OutsideFunctionErrorJS;ReqValid;EncodedReflection;StringReflectedInFunctionBetweenQuotes;;;;;SingleQuoteHtmlEncode;
+16;TestXSSCode;XSSVulnerable;1;1;1.0;AlertPayload;;PrependJSFix;;AppendJSFix;SemicolonUrlEncoding;;;;;NoErrors;ReqValid;EncodedReflection;StringReflectedInFunctionBetweenQuotes;;;;;SingleQuoteHtmlEncode;
+17;TestXSSInHTML;TestXSSInHTML;0;0;8.857;ScriptBasePayload;;;;;;;;;;NoErrors;ReqValid;FilteredReflection;StringIsReflectedInHTML ;;TagBracketIsNotEncoded ;ScriptWordFiltered;;;
+18;TestXSSInHTML;XSSVulnerable;1;1;18.0;ScriptBasePayload;;;;;;MixUppercase;;;;NoErrors;ReqValid;PerfectReflection;StringIsReflectedInHTML ;;TagBracketIsNotEncoded ;ScriptWordNotFiltered;;;
+19;CheckReflectionString;TestXSSInHTML;0;0;143.303;GenericStringPayload;;;;;;;;;;NoErrors;ReqValid;PerfectReflection;StringReflectedInImgSrc;;;;;;
+20;TestImgSrcXSS;XSSVulnerable;1;1;2.0;InSrcPayload;;;;;;;;;;NoErrors;ReqValid;FilteredReflection;StringReflectedInImgSrc;;TagBracketIsNotEncoded ;;;;
+21;CheckReflectionString;TestXSSInInputValue;0;0;143.303;GenericStringPayload;;;;;;;;;;NoErrors;ReqValid;PerfectReflection;;;;;;;
+22;TestXSSInInputValue;XSSVulnerable;1;1;3.0;ScriptBasePayload;;PrependHtmlClosureTag;;;;;;;;NoErrors;ReqValid;PerfectReflection;;;;;;;
+23;CheckReflectionString;TestXSSInInputValue;0;0;143.303;GenericStringPayload;;;;;;;;;;NoErrors;ReqValid;PerfectReflection;ScriptReflectedInInputValueDoubleQuotes;;;;;;
+24;TestXSSInInputValue;XSSVulnerable;1;1;3.0;ScriptBasePayload;;PrependHtmlClosureTag;;;;;;;;NoErrors;ReqValid;PerfectReflection;ScriptReflectedInInputValueDoubleQuotes;;;;;;
+25;TestXSSInInputValue;TestXSSInInputValue;0;0;3.0;ScriptBasePayload;;PrependHtmlClosureTag;;;;;;;;NoErrors;ReqValid;EncodedReflection;ScriptReflectedInInputValueDoubleQuotes;;TagBracketEncoded;;;;
+26;TestXSSInInputValue;XSSVulnerable;1;1;4.667;OnFocusPayload;;PrependDoubleQuote;;;;;;;;NoErrors;ReqValid;PerfectReflection;ScriptReflectedInInputValueDoubleQuotes;DoubleQuoteNotEncoded;;;;;
+27;CheckReflectionString;TestXSSInInputValue;0;0;143.303;GenericStringPayload;;;;;;;;;;NoErrors;ReqValid;PerfectReflection;ScriptReflectedInInputNoQuotes;;;;;;
+28;TestXSSInInputValue;TestXSSInInputValue;0;0;3.0;ScriptBasePayload;;PrependHtmlClosureTag;;;;;;;;NoErrors;ReqValid;EncodedReflection;ScriptReflectedInInputNoQuotes;;TagBracketEncoded;;;;
+29;TestXSSInInputValue;TestXSSInInputValue;0;0;0.0;OnFocusPayload;DoubleQuoteClean;PrependSpace;;;;;;;;NoErrors;ReqValid;PerfectReflection;ScriptReflectedInInputNoQuotes;DoubleQuoteEscaped;;;;;
+30;TestXSSInInputValue;XSSVulnerable;1;1;7.0;OnFocusPayload;DoubleQuoteRemove;PrependSpace;;;;;;;;NoErrors;ReqValid;PerfectReflection;ScriptReflectedInInputNoQuotes;;;;;;
+31;CheckReflectionString;TestXSSInInputValue;0;0;143.303;GenericStringPayload;;;;;;;;;;NoErrors;ReqValid;PerfectReflection;ScriptReflectedInInputNoQuotes;;;;;;CharsetIsControllable
+32;TestXSSInInputValue;TestXSSInInputValue;0;0;3.0;ScriptBasePayload;;PrependHtmlClosureTag;;;;;;;;NoErrors;ReqValid;EncodedReflection;ScriptReflectedInInputValueDoubleQuotes;;TagBracketEncoded;;;;CharsetIsControllable
+33;TestXSSInInputValue;TestXSSInInputValue;0;0;4.667;OnFocusPayload;;PrependDoubleQuote;;;;;;;;NoErrors;ReqValid;EncodedReflection;ScriptReflectedInInputValueDoubleQuotes;DoubleQuoteEncoded;;;;;CharsetIsControllable
+34;TestXSSInInputValue;XSSVulnerable;1;1;7.0;OnFocusPayload;UTF7Encoding;PrependDoubleQuote;;;;;SetCharsetUTF7;;;NoErrors;ReqValid;PerfectReflection;ScriptReflectedInInputValueDoubleQuotes;DoubleQuoteNotEncoded;;;;;
+35;CheckReflectionString;TestXSSInFunctionBetweenQuotes;0;0;143.303;GenericStringPayload;;;;;;;;;;NoErrors;ReqValid;PerfectReflection;StringReflectedInFunctionBetweenQuotes;;;;;;
+36;TestXSSInFunctionBetweenQuotes;TestXSSInFunctionBetweenQuotes;0;0;0.0;AlertPayload;;;;;;;;;;InsideFunction;ReqValid;PerfectReflection;StringReflectedInFunctionBetweenQuotes;;;;;;
+37;TestXSSInFunctionBetweenQuotes;XSSVulnerable;1;1;1.0;AlertPayload;;PrependJSFix;;AppendJSFix;;;;;;NoErrors;ReqValid;PerfectReflection;StringReflectedInFunctionBetweenQuotes;DoubleQuoteNotEncoded;;;;;
+38;CheckReflectionString;TestXSSInHTML;0;0;294.344;AllValuesPayload;;;;;;;;;;NoErrors;ReqValid;PerfectReflection;StringIsReflectedInHTML ;;;;;;
+39;TestXSSInHTML;XSSVulnerable;1;1;18.0;SvgBasePayload;;;;;;;;;;NoErrors;ReqValid;PerfectReflection;StringIsReflectedInHTML ;;;;;;
+40;CheckReflectionString;TestXSSInAttributeHTML;0;0;294.344;AllValuesPayload;;;;;;;;;;NoErrors;ReqValid;PerfectReflection;StringReflectedInAttributeDiv;;;;;;
+41;TestXSSInAttributeHTML;XSSVulnerable;1;1;1.0;OnMouseOverPayload;;PrependDoubleQuote;;;;;;EncodingParenthesisBacktick;;NoErrors;ReqValid;PerfectReflection;StringReflectedInAttributeDiv;;;;;;
+42;TestXSSInHTML;XSSVulnerable;1;1;18.0;SvgBasePayload;;;;;;;;;EncodeSpaceSlash;NoErrors;ReqValid;PerfectReflection;StringIsReflectedInHTML ;;;;;;

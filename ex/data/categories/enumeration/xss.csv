@@ -1,0 +1,34 @@
+State,Description,Azione,Observation,Next State,IsEndState?
+TestReflectionString,Il Pentest sta verificando se la stringa è riflessa,"Invia la richiesta con una testNTT, controlla tutte le pagine per verificare 
+se la stringa è riflessa",la stringa è riflessa,Test Reflection Type,NO
+TestReflectionString,Il Pentest sta verificando se la stringa è riflessa,"Invia la richiesta con una testNTT, controlla tutte le pagine per verificare 
+se la stringa è riflessa",la stringa non è riflessa,No XSS,YES/FAIL
+TestReflectionType,Il Pentest sta verificando il tipo di riflessione,Analizza la riflessione dove è avvenuta,La stringa è riflessa in HTML,TestXSSInHTML,NO
+TestReflectionType,Il Pentest sta verificando il tipo di riflessione,Analizza la riflessione dove è avvenuta,La stringa è riflessa in HREF,TestHrefXSS,NO
+TestReflectionType,Il Pentest sta verificando il tipo di riflessione,Analizza la riflessione dove è avvenuta,La stringa è riflessa nel codice,TestXSSInCode,NO
+TestXSSInHTML,Il Pentest sta verificando una Reflection nell'HTML,"Invia tutte le possibili codifiche della stringa <testNTT : 
+<testString
+%3CtestString
+&lttestString
+....
+&#X0003C;testString
+&#X00003C;testString
+&#X000003C;testString
+\u003ctestString
+\u003CtestString",La stringa <testString è riflessa senza codifica,sendXSSAttack,NO
+TestXSSInHTML,Il Pentest sta verificando una Reflection nell'HTML,"Invia tutte le possibili codifiche della stringa <testNTT : 
+<testString
+%3CtestString
+&lttestString
+....
+&#X0003C;testString
+&#X00003C;testString
+&#X000003C;testString
+\u003ctestString
+\u003CtestString",La stringa <testString è sempre codificata,NO XSS / Suggerimento,YES/FAIL
+sendXSSAttack,Il Pentest prova a inviare una stringa di detection,<script>alert(1);</script>,La stringa è riflessa,XSS Vulnerable,YES/SUCCESS
+sendXSSAttack,Il Pentest prova a inviare una stringa di detection,<script>alert(1);</script>,La stringa non è riflessa,No XSS / Suggerimento,YES/FAIL
+TestHrefXSS,Il Pentest  sta verificando una riflessione nell'attributo href,prova ad iniettare javascript:alert(1) nell'attributo href,La stringa è riflessa,XSS Vulnerable,YES/SUCCESS
+TestHrefXSS,Il Pentest  sta verificando una riflessione nell'attributo href,prova ad iniettare javascript:alert(1) nell'attributo href,La stringa non è riflessa,No XSS / Suggerimento,YES / FAIL
+TestXSSInCode,Il Pentest sta verificando una riflessione nel codice,invia una richiesta tale che non determini un errore Javascript,Riesci a generare JS senza errori,XSS Vulnerable,YES/SUCCESS
+TestXSSInCode,Il Pentest sta verificando una riflessione nel codice,invia una richiesta tale che non determini un errore Javascript,Non riesci a generare JS senza errori,No XSS / Suggerimento,YES / FAIL 

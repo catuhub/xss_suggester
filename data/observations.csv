@@ -1,0 +1,37 @@
+Observation,Description,Category
+no_available_observation,"The application has not been probed yet, so no observations are available",OBSERVATION_BOOTSTRAP
+simple_html,"The string is reflected in a simple HTML context",OBSERVATION_REFLECTION_CONTEXT
+html_tag,"The string is reflected in the value field of an HTML tag",OBSERVATION_REFLECTION_CONTEXT
+script_tag,"The string is reflected in an HTML script tag",OBSERVATION_REFLECTION_CONTEXT
+html_comment,"The string is reflected in an HTML comment area",OBSERVATION_REFLECTION_CONTEXT
+url_attribute,"The string is reflected in an URL tag attribute",OBSERVATION_REFLECTION_CONTEXT
+attribute,"The string is reflected in a tag attribute",OBSERVATION_REFLECTION_CONTEXT
+javascript_event,"The string is reflected in a javascript event",OBSERVATION_REFLECTION_CONTEXT
+javascript_variable,"The string is reflected in a javascript variable",OBSERVATION_REFLECTION_CONTEXT
+javascript_single_line_comment,"The string is reflected in a javascript single line comment area",OBSERVATION_REFLECTION_CONTEXT
+javascript_multiple_line_comment,"The string is reflected in a javascript multiple line comment area",OBSERVATION_REFLECTION_CONTEXT
+javascript_code,"The string is reflected in a javascript code area",OBSERVATION_REFLECTION_CONTEXT
+no_escape,"No need to escape current context",OBSERVATION_ESCAPE_CONTEXT
+escape_tag,"Escape the current context by closing the HTML tag",OBSERVATION_ESCAPE_CONTEXT
+escape_html_comment,"Escape the current context by closing the HTML comment",OBSERVATION_ESCAPE_CONTEXT
+double_quote_escape,"Escape the current context by closing double quotes",OBSERVATION_ESCAPE_CONTEXT
+single_quote_escape,"Escape the current context by closing single quotes",OBSERVATION_ESCAPE_CONTEXT
+singlequote_semicolon_escape,"Escape the current context by closing single quotes and semicolon",OBSERVATION_ESCAPE_CONTEXT
+doublequote_semicolon_escape,"Escape the current context by closing double quotes and semicolon",OBSERVATION_ESCAPE_CONTEXT
+semicolon_escape,"Escape the current context by closing the semicolon",OBSERVATION_ESCAPE_CONTEXT
+multiline_javascript_comment_escape,"Escape the current context by closing the multiline javascript comment",OBSERVATION_ESCAPE_CONTEXT
+script_tag_opening,"A new context can be injected using an HTML script tag",OBSERVATION_NEW_CONTEXT
+javascript_context,"A new context can be injected using a javascript expression",OBSERVATION_NEW_CONTEXT
+javascript_event_context,"A new context can be injected using a javascript event",OBSERVATION_NEW_CONTEXT
+no_context,"No need to inject a new context",OBSERVATION_NEW_CONTEXT
+script_tag_closure,"The script tag injected has no tag closure",OBSERVATION_POSTCONTEXT
+no_postcontext,"No need to fill the PostContext after inserting a new context",OBSERVATION_POSTCONTEXT
+javascript_comment,"Fix the PostContext using a javascript comment",OBSERVATION_POSTCONTEXT
+javascript_multiline_comment,"Fix the PostContext using a javascript multiline comment",OBSERVATION_POSTCONTEXT
+no_pre_exploit,"No need to fix the PreExploit section after inserting a new Context",OBSERVATION_PRE_EXPLOIT
+double_quote_fix,"Fix the PreExploit section using the double quotes",OBSERVATION_PRE_EXPLOIT
+single_quote_fix,"Fix the PreExploit section using the single quote character",OBSERVATION_PRE_EXPLOIT
+line_feed_carriage_return,"Fix the PreExploit section using line feed and carriage return characters",OBSERVATION_PRE_EXPLOIT
+no_filtering,"No filtering has been detected",OBSERVATION_FILTERING
+double_quote_filtered,"Filtering on double quote character detected",OBSERVATION_FILTERING
+alert_popped,"The exploit code was executed by the web application",OBSERVATION_CODE_EXECUTED

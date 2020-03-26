@@ -1,0 +1,46 @@
+Observation,Description,Category
+DK,"The observation is not relevant for the evolution of the state
+or cannot infer nothing ",GENERIC
+CharsetIsNotControllable,The charset is not controllable by the user,CharsetControllable
+CharsetIsControllable,The charset is controllable by the user,CharsetControllable
+CharsetUTF-7,The charset is UTF-7,Chasert
+UnsafeCharset,"avoid UTF-7, all EBCDIC encodings (CP1047, CP037, …),
+ ISO-2022-* (ISO-2022-KR, ISO-2022-JP, ISO-2022-CN, …),
+ JOHAB, SCSU, BOCU-1, and possibly others",Charset
+ResponseCodeOk,The response code is 200 OK,ResponseCode
+ReqValid,The request is valid,RequestValidity
+ReqNotValidUrl,The request is not valid,RequestValidity
+NoErrorsInJS ,No errors in Javascript code,JSSyntax
+ErrorsInJS ,Errors in Javascript Code,JSSyntax
+NoErrors,Payload correct,PayloadSyntax
+OutsideFunctionErrorJS,"Error in js, but can write arbitrary javascript code",PayloadSyntax
+InsideFunction,"Payload is inside a function, must Bypass",PayloadSyntax
+ExtensionFileProblem,A file extension is appended to payload and give problems,PayloadSyntax
+EncodedReflection,The string is reflected but encoded,Reflection
+StringIsNotReflected ,The string is not reflected,Reflection
+FilteredReflection,The payload has been filtered,Reflection
+PerfectReflection,The string is reflected without ,Reflection 
+StringIsReflectedInHTML ,String reflected in HTML,ReflectionLocation
+ScriptReflectedInInputNoQuotes,String is reflected in value input no double quotes,ReflectionLocation
+ScriptReflectedInInputValueDoubleQuotes,String is reflected in value input and is inside double quotes,ReflectionLocation
+StringReflectedInImgSrc,"The string is reflected in <img src=""here""",ReflectionLocation
+StringReflectedInAttributeDiv,The string is reflected in attribute of div tag,ReflectionLocation
+StringIsReflectedInHREF ,String reflected in HREF,ReflectionLocation
+StringReflectedInFunctionBetweenQuotes,The string is reflected in JS code between two single quotes,ReflectionLocation
+StringIsReflectedInCode ,String Reflected in Code,ReflectionLocation
+SingleQuoteFiltered,The single quote has been filtered,SingleQuote
+SingleQuoteNotEscaped,The ' is not escaped,SingleQuote
+SingleQuoteHtmlEncode,The ' is html encoded,SingleQuote
+SingleQuoteIsEscaped,The ' is escaped,SingleQuote
+TagBracketIsNotEncoded ,The tag bracket is not encoded,TagBracket
+TagBracketEncoded,The tag bracket is encoded,TagBracket
+TagBracketIsAlwaysBracket ,The tag bracket is encoded,TagBracket
+TagBracketIsFiltered,The tag braked has been filtered,TagBracket
+DoubleQuoteFIltered,The double quote has been filtered,DoubleQuote
+DoubleQuoteEscaped,"The "" is not escaped",DoubleQuote
+DoubleQuoteNotEncoded,"The "" is not encoded",DoubleQuote
+DoubleQuoteEncoded,"The "" is encoded",DoubleQuote
+ScriptWordFiltered,The script word is filtered,ScriptWord
+ScriptWordNotFiltered,The script word is not,ScriptWord
+ImgWordFiltered,The img word is filtered,ImgWord
+ImgWordNotFiltered,The img word is not filtered,ImgWord

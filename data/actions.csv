@@ -1,0 +1,21 @@
+Action,Description,Category
+bootstrap,"Empty string as bootstrap",ACTION_AGENT
+all_agents,"Best action among all available agents",ACTION_AGENT
+simple_html,"Agent that suggests actions to be performed in HTML context",ACTION_AGENT
+no_agent,"The string does not need to be modified, therefore no agent needs to be called",ACTION_AGENT
+html_tag,"Agent that suggests actions to be performed in HTML tag context",ACTION_AGENT
+html_comment,"Agent that suggests actions to be performed in HTML comment area context",ACTION_AGENT
+urlattribute,"Agent that suggests actions to be performed in an URL tag attribute context",ACTION_AGENT
+attribute,"Agent that suggests actions to be performed in a tag attribute context",ACTION_AGENT
+attribute_filtering,"Agent that suggests actions to be performed in a tag attribute context, when some characters are filtered",ACTION_AGENT
+code_singlequote,"Agent that suggests actions to be performed in a code context, with single quote variables",ACTION_AGENT
+code_doublequote,"Agent that suggests actions to be performed in a code context, with double quote variables",ACTION_AGENT
+code,"Agent that suggests actions to be performed in a code context",ACTION_AGENT
+code_comment,"Agent that suggests actions to be performed in a javascript single line comment area",ACTION_AGENT
+code_mlcomment,"Agent that suggests actions to be performed in a javascript multi line comment area",ACTION_AGENT
+ExploitCode,"The Exploit Code needs to be modified",ACTION_PLACE
+PreContext,"The Pre Context needs to be modified",ACTION_PLACE
+Context,"The Context needs to be modified",ACTION_PLACE
+PostContext,"The Post Context needs to be modified",ACTION_PLACE
+PreExploit,"The Pre Exploit needs to be modified",ACTION_PLACE
+no_place,"No Substring needs to be modified",ACTION_PLACE

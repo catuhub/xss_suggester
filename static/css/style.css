@@ -1,0 +1,98 @@
+html{
+	height:100%;
+}
+
+body{
+	height:100%;
+	padding-top:56px;
+}
+
+#header {
+     margin-top:56px;
+     height:56px;
+}
+#wrapper {
+	height:100%;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+#report-area{
+	margin-top:10px;
+}
+
+.report-body{
+	border:1px solid #ddd;
+	padding:30px;
+	background:#fff;
+	
+}
+
+#category-selection{
+	display:none;
+}
+
+#report-area{
+	display:none;
+	
+}
+
+.display-off {
+  display: none
+}
+
+.separator{
+	margin-top:20px;
+	margin-bottom:20px;
+	padding-bottom:10px;
+	text-align:right;
+	width:100%;
+	border-bottom:2px solid #dc3545;
+}
+
+.separator-top{
+	width:100%;
+	border-bottom:2px solid #dc3545;
+}
+
+.ob-area{
+	margin-bottom: 10px;
+	cursor:pointer;
+}
+
+.ob-area:hover{
+	cursor:pointer;
+	box-shadow: 0 0 3px rgba(47,104,204,1);
+}
+
+.ob-area.active{
+	cursor:pointer;
+	box-shadow: 0 0 3px rgba(47,104,204,1);
+}
+
+/*
+.icon-show::after{
+	font-size:20px;
+	font-weight:bold;
+	content: "\2713";
+	position: absolute;
+    right: 10px;
+    color: rgba(47,104,204,1);
+}*/
+
+.icon-show{
+	background-image:url('../img/check.png');
+	background-repeat: no-repeat;
+	background-position: top -1px right -1px;
+}

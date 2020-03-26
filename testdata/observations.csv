@@ -1,0 +1,46 @@
+Observation,Description,Category
+DK,"The observation is not relevant for the evolution of the state
+or cannot infer nothing ",GENERIC
+CharsetIsNotControllable,The charset is not controllable by the user,OBSERVATION_ISCHARSETINPUT
+CharsetIsControllable,The charset is controllable by the user,OBSERVATION_ISCHARSETINPUT
+CharsetUTF-7,The charset is UTF-7,Chasert
+UnsafeCharset,"avoid UTF-7, all EBCDIC encodings (CP1047, CP037, …),
+ ISO-2022-* (ISO-2022-KR, ISO-2022-JP, ISO-2022-CN, …),
+ JOHAB, SCSU, BOCU-1, and possibly others",Charset
+ResponseCodeOk,The response code is 200 OK,Observation_ResponseCode
+ReqValid,The request is valid,OBSERVATION_REQUESTVALIDITY
+ReqNotValidUrl,The request is not valid,OBSERVATION_REQUESTVALIDITY
+NoErrorsInJS ,No errors in Javascript code,JSSyntax
+ErrorsInJS ,Errors in Javascript Code,JSSyntax
+NoErrors,Payload correct,OBSERVATION_PAYLOAD
+OutsideFunctionErrorJS,"Error in js, but can write arbitrary javascript code",OBSERVATION_PAYLOAD
+InsideFunction,"Payload is inside a function, must Bypass",OBSERVATION_PAYLOAD
+ExtensionFileProblem,A file extension is appended to payload and give problems,OBSERVATION_PAYLOAD
+EncodedReflection,The string is reflected but encoded,OBSERVATION_REFLECTION
+StringIsNotReflected ,The string is not reflected,OBSERVATION_REFLECTION
+FilteredReflection,The payload has been filtered,OBSERVATION_REFLECTION
+PerfectReflection,The string is reflected without ,OBSERVATION_REFLECTION
+StringIsReflectedInHTML ,String reflected in HTML,OBSERVATION_REFLECTION_LOCATION
+ScriptReflectedInInputNoQuotes,String is reflected in value input no double quotes,OBSERVATION_REFLECTION_LOCATION
+ScriptReflectedInInputValueDoubleQuotes,String is reflected in value input and is inside double quotes,OBSERVATION_REFLECTION_LOCATION
+StringReflectedInImgSrc,"The string is reflected in <img src=""here""",OBSERVATION_REFLECTION_LOCATION
+StringReflectedInAttributeDiv,The string is reflected in attribute of div tag,OBSERVATION_REFLECTION_LOCATION
+StringIsReflectedInHREF ,String reflected in HREF,OBSERVATION_REFLECTION_LOCATION
+StringReflectedInFunctionBetweenQuotes,The string is reflected in JS code between two single quotes,OBSERVATION_REFLECTION_LOCATION
+StringIsReflectedInCode ,String Reflected in Code,OBSERVATION_REFLECTION_LOCATION
+SingleQuoteFiltered,The single quote has been filtered,OBSERVATION_SINGLEQUOTE
+SingleQuoteNotEscaped,The ' is not escaped,OBSERVATION_SINGLEQUOTE
+SingleQuoteHtmlEncode,The ' is html encoded,OBSERVATION_SINGLEQUOTE
+SingleQuoteIsEscaped,The ' is escaped,OBSERVATION_SINGLEQUOTE
+TagBracketIsNotEncoded ,The tag bracket is not encoded,OBSERVATION_TAGBRACKET
+TagBracketEncoded,The tag bracket is encoded,OBSERVATION_TAGBRACKET
+TagBracketIsAlwaysBracket ,The tag bracket is encoded,OBSERVATION_TAGBRACKET
+TagBracketIsFiltered,The tag braked has been filtered,OBSERVATION_TAGBRACKET
+DoubleQuoteFIltered,The double quote has been filtered,OBSERVATION_DOUBLEQUOTE
+DoubleQuoteEscaped,"The "" is not escaped",OBSERVATION_DOUBLEQUOTE
+DoubleQuoteNotEncoded,"The "" is not encoded",OBSERVATION_DOUBLEQUOTE
+DoubleQuoteEncoded,"The "" is encoded",OBSERVATION_DOUBLEQUOTE
+ScriptWordFiltered,The script word is filtered,OBSERVATION_SCRIPTSTRING
+ScriptWordNotFiltered,The script word is not,OBSERVATION_SCRIPTSTRING
+ImgWordFiltered,The img word is filtered,OBSERVATION_IMG_WORD
+ImgWordNotFiltered,The img word is not filtered,OBSERVATION_IMG_WORD
