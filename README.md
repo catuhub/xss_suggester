@@ -6,9 +6,9 @@ Python 2.7
 
 ## Installation
 ```
-git clone https://github.com/catuhub/reinforced_xss.git
+git clone https://github.com/catuhub/xss_suggester.git
 
-cd wapt_suggester
+cd xss_suggester
 
 pip install -r requirements.txt
 
@@ -18,9 +18,9 @@ Point your browser to localhost:5000
 
 ## Dockerfile
 ```
-docker build . -t wapt_suggester
+docker build . -t xss_suggester
 
-docker run -d -p 5000:5000 wapt_suggester
+docker run -d -p 5000:5000 xss_suggester
 ```
 
 ## Test with Wavsep
