@@ -1,4 +1,4 @@
-# wapt_suggester
+# xss_suggester
 A framework that suggests actions to perform during a web application penetration test, based on a multiobjective reinforcement learning environment. Currently supports XSS vulnerabilities detection. Try it on OWASP WAVSEP benchmark!
 
 ## Requirements
