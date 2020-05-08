@@ -52,7 +52,7 @@ class HackingGoal():
         name = subActions["action_agent"].getName()
         
         if(name != "no_agent"):
-            with open("./q_tables/q_table_" + name + ".csv", "r") as csv_file:
+            with open("./q_free_tables/q_table_" + name + ".csv", "r") as csv_file:
                 print("in set current string", name)
                 reader = csv.reader(csv_file)
                 i = 0
